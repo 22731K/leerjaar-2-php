@@ -19,8 +19,8 @@ if(isset($_POST['register-btn'])){
 		$registrationErrors = $user->RegisterUser();
 	}
 	
-	if(!empty($registrationErrors)){
-		$message = implode("\\n", $registrationErrors);
+	if(!empty($errors)){
+		$message = implode("\\n", $errors);
 		
 		echo "
 		<script>alert('" . $message . "')</script>

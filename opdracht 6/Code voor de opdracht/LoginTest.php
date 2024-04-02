@@ -34,9 +34,9 @@ class LoginTest extends Testcase{
 
     }
     public function testshortUsername(){
-        $this->user->username = "jo";
+        $this->user->username = "jobn";
         $errors = $this->user->ValidateUser();
-        $this->assertContains("Username length should be between 3 and 50 characters", $errors);
+        $this->assertContains("Length username must be > 3 and < 50.", $errors); 
     }
     
     public function testIslogin_set(){
@@ -48,6 +48,7 @@ class LoginTest extends Testcase{
         $this->user->Logout();
         $this->assertFalse($this->user->Isloggedin());
     }
+    
     public function testLogout(){
          session_start();
          $this->user->Logout();
